@@ -8,7 +8,7 @@ echo "$STAGED_FILES"
 
 # Extract all python files
 STAGED_PYTHON_FILES=$(echo "$STAGED_FILES" | grep .py$)
-STAGED_HTML_FILES=$(echo "$STAGED_FILES" | grep .py$)
+STAGED_HTML_FILES=$(echo "$STAGED_FILES" | grep .html$)
 STAGED_NOTEBOOK_FILES=$(echo "$STAGED_FILES" | grep .ipynb$)
 
 # Auto format all staged python files with black.
@@ -23,7 +23,7 @@ done
 
 # Auto format html files
 echo "Linting HTML Files"
-for FILE in $STAGED_PYTHON_FILES;
+for FILE in $STAGED_HTML_FILES;
 do
     echo $FILE
     tidy -i -modify $FILE
