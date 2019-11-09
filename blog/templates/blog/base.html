@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 17.1), see www.w3.org">
+
+  <title>Django Girls blog</title>
+  <link rel="stylesheet" href=
+  "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  type="text/css">
+  <link rel="stylesheet" href=
+  "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+  type="text/css">
+  <link href=
+  "//fonts.googleapis.com/css?family=Lobster&amp;subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{%%20static%20'css/blog.css'%20%}"
+  type="text/css">
+</head>
+
+<body>
+  {% load static %}
+
+  <div class="page-header">
+    <a href="{%%20url%20'post_new'%20%}" class="top-menu"></a>
+
+    <h1><a href="/">Django Girls Blog</a></h1>
+  </div>
+
+  <div class="content container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -9,16 +9,18 @@
 </head>
 
 <body>
-  {% extends 'blog/base.html' %} {% block content %} {% for post in
-  posts %}
+  {% extends 'blog/base.html' %} {% block content %}
 
   <div class="post">
-    <p>published: {{ post.published_date }}</p>
+    {% if post.published_date %}
 
-    <h2><a href="{%%20url%20'post_detail'%20pk=post.pk%20%}">{{
-    post.title }}</a></h2>
+    <div class="date">
+      {{ post.published_date }}
+    </div>{% endif %}
+
+    <h2>{{ post.title }}</h2>
 
     <p>{{ post.text|linebreaksbr }}</p>
-  </div>{% endfor %} {% endblock %}
+  </div>{% endblock %}
 </body>
 </html>
